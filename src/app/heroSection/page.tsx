@@ -165,7 +165,7 @@ const HeroSection = () => {
             className="text-sky-400 font-medium mb-2 text-lg sm:text-xl"
             variants={itemVariants}
           >
-            Hello, I&aspos;m
+            Hello, I&apos;m
           </motion.p>
           <motion.h1
             className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tighter mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-300"
