@@ -1,9 +1,9 @@
-// components/Footer.js
 "use client";
 
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Linkedin, Github, Mail, ChevronUp, Copyright } from "lucide-react";
+import { Linkedin, Github, ChevronUp, Copyright, Twitter } from "lucide-react";
+import { TbBrandFiverr } from "react-icons/tb";
 
 const Footer = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -34,18 +34,28 @@ const Footer = () => {
     {
       name: "LinkedIn",
       icon: <Linkedin size={22} />,
-      href: "https://www.linkedin.com/in/mehak-45a190245/", // REPLACE
+      href: "https://www.linkedin.com/in/mehak-45a190245/",
     },
     {
       name: "GitHub",
       icon: <Github size={22} />,
-      href: "https://github.com/mehak-2", // REPLACE
+      href: "https://github.com/mehak-2",
     },
     {
-      name: "Email",
-      icon: <Mail size={22} />,
-      href: "kangmehak167@gmail.com", // REPLACE
+      name: "Twitter",
+      icon: <Twitter size={24} />,
+      href: "https://x.com/mehak_codes",
     },
+    {
+      name: "Fiverr",
+      icon: <TbBrandFiverr size={24} />,
+      href: "https://www.fiverr.com/s/ZmgZKgk",
+    },
+    // {
+    //   name: "Email",
+    //   icon: <Mail size={22} />,
+    //   href: "kangmehak167@gmail.com", // REPLACE
+    // },
   ];
 
   const footerVariants = {
@@ -67,7 +77,6 @@ const Footer = () => {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0">
-          {/* Copyright */}
           <div className="flex items-center text-sm">
             <Copyright size={16} className="mr-1.5" />
             <span>

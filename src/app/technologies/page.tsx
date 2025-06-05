@@ -17,14 +17,14 @@ import {
 import { FaSquareJs } from "react-icons/fa6";
 import { BiLogoTypescript, BiLogoBootstrap } from "react-icons/bi";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
-import { VscVscode } from "react-icons/vsc"; // VscTerminalCmd for Unix-like
+import { VscVscode } from "react-icons/vsc";
 import {
   SiCplusplus,
   SiSpringboot,
   SiMysql,
   SiFirebase,
   SiFramer,
-} from "react-icons/si"; // Using SiVisualstudiocode as Vscode can be redundant with VscVscode
+} from "react-icons/si";
 import {
   Settings2,
   Cpu,
@@ -32,12 +32,12 @@ import {
   Code,
   LucideProps,
   TerminalSquare,
-} from "lucide-react"; // Added more general icons
+} from "lucide-react";
 
 interface TechItem {
   name: string;
   icon: React.ReactNode;
-  color?: string; // Optional: for specific icon color if not handled by className
+  color?: string;
 }
 
 interface TechCategory {
@@ -45,10 +45,9 @@ interface TechCategory {
   items: TechItem[];
 }
 
-// Merging resume skills and structuring categories
 const techCategories: TechCategory[] = [
   {
-    title: "Programming Languages",
+    title: "Languages",
     items: [
       {
         name: "JavaScript",
@@ -67,7 +66,7 @@ const techCategories: TechCategory[] = [
         name: "C++",
         icon: <SiCplusplus size={32} className="text-blue-700" />,
       },
-      { name: "C", icon: <Code size={32} className="text-gray-400" /> }, // Generic code icon for C
+      { name: "C", icon: <Code size={32} className="text-gray-400" /> },
       { name: "PHP", icon: <FaPhp size={36} className="text-indigo-400" /> },
     ],
   },
@@ -113,7 +112,7 @@ const techCategories: TechCategory[] = [
       {
         name: "Firebase",
         icon: <SiFirebase size={32} className="text-yellow-500" />,
-      }, // For Firestore/RTDB
+      },
     ],
   },
   {
@@ -128,11 +127,11 @@ const techCategories: TechCategory[] = [
         name: "VS Code",
         icon: <VscVscode size={36} className="text-blue-500" />,
       },
-      { name: "Eclipse", icon: <Cpu size={32} className="text-indigo-500" /> }, // Generic CPU/IDE icon
+      { name: "Eclipse", icon: <Cpu size={32} className="text-indigo-500" /> },
       {
         name: "Windows",
         icon: <Settings2 size={32} className="text-sky-500" />,
-      }, // Settings for generic OS
+      },
       {
         name: "Linux",
         icon: <FaLinux size={32} className="text-yellow-300" />,
@@ -159,10 +158,10 @@ const FloatingShape: React.FC<FloatingShapeProps> = ({
   icon: Icon,
   className,
   animationProps,
-  sizeRange = [50, 100], // Default size range
+  sizeRange = [50, 100],
 }) => (
   <motion.div
-    className={`absolute z-0 text-sky-500/5 ${className || ""}`} // More transparent
+    className={`absolute z-0 text-sky-500/5 ${className || ""}`}
     initial={{
       opacity: 0,
       scale: 0.3,
@@ -174,14 +173,14 @@ const FloatingShape: React.FC<FloatingShapeProps> = ({
       opacity: [0, 0.3, 0.1, 0.3, 0],
       scale: [0.3, 1, 0.6, 1, 0.3],
       rotate: Math.random() * 720 - 360,
-      x: `calc(${Math.random() * 30 - 15}vw + ${Math.random() * 100 - 50}px)`, // Wider drift
+      x: `calc(${Math.random() * 30 - 15}vw + ${Math.random() * 100 - 50}px)`,
       y: `calc(${Math.random() * 30 - 15}vh + ${Math.random() * 100 - 50}px)`,
       ...animationProps?.animate,
     }}
     transition={{
-      duration: Math.random() * 20 + 25, // Slower, more ambient
+      duration: Math.random() * 20 + 25,
       repeat: Infinity,
-      ease: "easeInOut", // Smoother ease for drifting
+      ease: "easeInOut",
       delay: Math.random() * 10,
       ...animationProps?.transition,
     }}
@@ -203,7 +202,6 @@ const Technologies: React.FC = () => {
   };
 
   const titleItemVariants: Variants = {
-    // For title and paragraph
     hidden: { opacity: 0, y: 30, filter: "blur(5px)" },
     visible: {
       opacity: 1,
@@ -250,7 +248,6 @@ const Technologies: React.FC = () => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.05 }}
     >
-      {/* Floating Background Shapes */}
       <FloatingShape
         icon={Code}
         className="top-10 left-10"
@@ -274,19 +271,16 @@ const Technologies: React.FC = () => {
       />
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-        {/* Section Title */}
         <motion.div
           className="flex items-center mb-8 md:mb-12"
-          variants={titleItemVariants} // Applied to the wrapper
+          variants={titleItemVariants}
         >
-          <motion.h2 // No separate variants, inherits stagger from parent
-            className="text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-cyan-400 to-indigo-400 uppercase tracking-tight"
-          >
+          <motion.h2 className="text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-cyan-400 to-indigo-400 uppercase tracking-tight">
             My Tech Arsenal
           </motion.h2>
-          <motion.div // No separate variants
+          <motion.div
             className="ml-4 md:ml-6 h-1.5 flex-grow bg-gradient-to-r from-sky-500/70 to-indigo-500/70 rounded-full shadow-[0_0_12px_rgba(56,189,248,0.4)]"
-            variants={lineGrowVariants} // Specific animation for the line itself
+            variants={lineGrowVariants}
           />
         </motion.div>
 
@@ -298,12 +292,11 @@ const Technologies: React.FC = () => {
           build robust and innovative solutions:
         </motion.p>
 
-        {/* Categories Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 md:gap-x-10 md:gap-y-16">
           {techCategories.map((category, catIndex) => (
             <motion.div
               key={category.title}
-              initial="hidden" // Animate each category block as it comes into view
+              initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
               variants={{
@@ -321,19 +314,18 @@ const Technologies: React.FC = () => {
             >
               <motion.h3
                 className="text-2xl font-semibold text-sky-300 mb-6 pb-2 border-b-2 border-sky-800/70"
-                variants={categoryTitleVariants} // Keeps its own distinct reveal from the icons
+                variants={categoryTitleVariants}
               >
                 {category.title}
               </motion.h3>
               <div className="grid grid-cols-3 gap-x-4 gap-y-8">
                 {" "}
-                {/* Adjusted gaps */}
                 {category.items.map((tech) => (
                   <motion.div
                     key={tech.name}
                     className="flex flex-col items-center text-center group cursor-pointer"
                     title={tech.name}
-                    variants={techIconVariants} // Staggered from category parent
+                    variants={techIconVariants}
                     whileHover={{
                       y: -8,
                       scale: 1.15,
@@ -343,13 +335,9 @@ const Technologies: React.FC = () => {
                         damping: 8,
                       },
                     }}
-                    // Add a subtle continuous animation
                     animate={{
-                      // This animate prop on the item will be part of its 'visible' state
-                      // rotate: [0, 3, -3, 0], // Example subtle continuous rotation
-                      y: [0, -3, 0, 2, 0], // Example subtle bobbing
+                      y: [0, -3, 0, 2, 0],
                       transition: {
-                        // rotate: { duration: 8, ease: "easeInOut", repeat: Infinity, delay: Math.random() * 2},
                         y: {
                           duration: 3 + Math.random() * 2,
                           ease: "easeInOut",

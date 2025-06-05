@@ -14,9 +14,8 @@ import {
   Database,
   Zap,
   Aperture,
-  Download, // Added Download icon
 } from "lucide-react";
-import mypic from "../mypic.png"; // Make sure this path is correct
+import mypic from "../mypic.png";
 
 const getRandom = (min: number, max: number): number =>
   Math.random() * (max - min) + min;
@@ -185,9 +184,8 @@ const HeroSection = () => {
             with clean, efficient code. Ready to build something amazing?
           </motion.p>
 
-          {/* Button Container */}
           <motion.div
-            className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 sm:gap-6 mt-6" // Use flex container for buttons
+            className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 sm:gap-6 mt-6"
             variants={itemVariants}
           >
             <Link
@@ -200,28 +198,27 @@ const HeroSection = () => {
             >
               View My Work
               <ArrowRight
-                size={20} // Slightly adjusted icon size
+                size={20}
                 className="ml-2 transition-transform duration-300 group-hover:translate-x-1"
               />
             </Link>
 
-            {/* Download Resume Button */}
             <a
-              href="https://drive.google.com/file/d/1CAXZ1a8c_SCU29fFTldyrWQ4EIylfM52/view" // Path to your resume in the public folder
-              download // This attribute prompts the browser to download the file
+              href="https://drive.google.com/file/d/1CAXZ1a8c_SCU29fFTldyrWQ4EIylfM52/view"
+              download
               className="inline-flex items-center justify-center px-8 py-3.5 bg-transparent border-2 border-sky-500
                            text-sky-400 text-base sm:text-lg font-semibold rounded-lg shadow-lg
                            hover:bg-sky-500 hover:text-white transition-all duration-300 ease-in-out
                            transform hover:scale-105 focus:outline-none focus:ring-4 
-                           focus:ring-sky-400/50 group w-full sm:w-auto" // Adjusted width
-              target="_blank" // Good practice to open PDFs in a new tab if download fails or user clicks
+                           focus:ring-sky-400/50 group w-full sm:w-auto"
+              target="_blank"
               rel="noopener noreferrer"
             >
-              Download Resume
-              <Download
+              Resume
+              {/* <Download
                 size={20} // Slightly adjusted icon size
                 className="ml-2 transition-transform duration-300 group-hover:scale-110" // Different hover for download icon
-              />
+              /> */}
             </a>
           </motion.div>
         </div>
@@ -248,7 +245,7 @@ const HeroSection = () => {
             />
 
             <motion.div
-              className="absolute inset-[18%] bg-slate-800/50 backdrop-blur-md rounded-2xl shadow-2xl overflow-hidden
+              className="absolute inset-[18%] bg-slate-800/50 backdrop-blur-md rounded-full shadow-2xl overflow-hidden
                          flex items-center justify-center group"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300, damping: 15 }}
@@ -256,11 +253,9 @@ const HeroSection = () => {
               <div className="w-full h-full flex flex-col items-center justify-center text-slate-400 text-center p-4">
                 <Image
                   src={mypic}
-                  alt="Mehak - Software Developer" // Improved alt text
-                  layout="responsive" // Using layout responsive, make sure parent has dimensions
-                  width={300} // Intrinsic width, layout responsive will handle scaling
-                  height={300} // Intrinsic height
-                  className="rounded-xl object-cover" // Optional: rounding for the image itself
+                  alt="Mehak - Software Developer"
+                  layout="fill"
+                  className="rounded-full object-cover"
                 />
               </div>
               <div className="absolute inset-0 rounded-2xl border border-sky-500/30 group-hover:border-sky-500/70 transition-all duration-300 opacity-0 group-hover:opacity-100 animate-pulse-slow" />
@@ -270,10 +265,9 @@ const HeroSection = () => {
                 key={`dot-${i}`}
                 className="absolute w-3 h-3 bg-sky-400 rounded-full shadow-lg"
                 style={{
-                  // Adjust calculations if image container size changes
                   x:
                     Math.cos((i / 3) * 2 * Math.PI) * ((420 * 0.82) / 2 + 10) -
-                    6, // (diameter of inset-[18%] / 2 + offset) - (dot width / 2)
+                    6,
                   y:
                     Math.sin((i / 3) * 2 * Math.PI) * ((420 * 0.82) / 2 + 10) -
                     6,

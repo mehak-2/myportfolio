@@ -200,7 +200,6 @@ const ContactPage = () => {
               className="block text-sm font-medium text-sky-300 mb-1.5"
             >
               Dear, Mehak{" "}
-              {/* <span className="text-slate-400 text-xs">(Your Message)</span> */}
             </label>
             <div className="relative">
               <MessageSquare className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-500 pointer-events-none" />

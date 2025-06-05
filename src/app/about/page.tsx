@@ -7,7 +7,7 @@ import {
   useTransform,
   HTMLMotionProps,
   MotionValue,
-  motionValue, // Added import
+  motionValue,
 } from "framer-motion";
 import {
   GraduationCap,
@@ -26,21 +26,18 @@ import {
   Sparkles,
 } from "lucide-react";
 
-// Helper to generate random numbers
 const getRandom = (min: number, max: number): number =>
   Math.random() * (max - min) + min;
 
-// Props for Lucide icons (or any icon component you might use)
 type IconBaseProps = {
   className?: string;
-  size?: number | string; // Lucide icons typically accept size
+  size?: number | string;
   color?: string;
   strokeWidth?: number | string;
-  // Add other common Lucide props if needed
 };
 
 interface FloatingIconCustomProps {
-  icon: React.ElementType<IconBaseProps>; // Specify that the icon component accepts IconBaseProps
+  icon: React.ElementType<IconBaseProps>;
   size: number;
   scrollProgress?: MotionValue<number>;
 }
@@ -57,13 +54,12 @@ const FloatingIcon = ({
   const duration = getRandom(30, 50);
   const delay = getRandom(0, 15);
 
-  // Create a MotionValue<number> with an initial value of 0 if scrollProgress is undefined
-  const defaultScrollProgress = motionValue(0); // This creates a MotionValue<number>
+  const defaultScrollProgress = motionValue(0);
   const effectiveScrollProgress: MotionValue<number> =
     scrollProgress || defaultScrollProgress;
 
   const yOffset = useTransform(
-    effectiveScrollProgress, // Now always MotionValue<number>
+    effectiveScrollProgress,
     [0, 1],
     [getRandom(-30, 30), getRandom(30, -30)]
   );
@@ -128,32 +124,31 @@ const About = () => {
     "I am adept at working with various tools and platforms like Git, Visual Studio, and Eclipse, and have experience with databases such as MySQL and Firebase. I thrive in collaborative environments and am eager to leverage my skills to tackle new challenges and contribute to significant digital advancements.",
   ];
 
-  // Define the type for timeline data items, including the icon element type
   type TimelineItemData = {
     date: string;
     title: string;
     company: string;
     description: string;
-    icon: React.ReactElement<IconBaseProps>; // Specify icon type for React.cloneElement
+    icon: React.ReactElement<IconBaseProps>;
   };
 
   const timelineData: TimelineItemData[] = [
     {
       date: "Dec 2024 - Present",
-      title: "Software Developer Intern",
+      title: "Software Developer Engineer Intern",
       company: "MaxTron AI",
       description:
         "Currently focused on enhancing backend SEO performance using Next.js and ensuring smooth API integration through collaboration with frontend teams.",
-      icon: <Briefcase />, // No need to pass className/size here, it will be cloned
+      icon: <Briefcase />,
     },
-    {
-      date: "Graduated June 2025",
-      title: "B.Tech in Computer Science",
-      company: "IK Gujral Punjab Technical University",
-      description:
-        "Successfully graduated with a specialization in software engineering, equipped with strong fundamentals in Object-Oriented Programming, Data Structures, Algorithms, and Operating Systems.",
-      icon: <GraduationCap />,
-    },
+    // {
+    //   date: "Graduated June 2025",
+    //   title: "B.Tech in Computer Science",
+    //   company: "IK Gujral Punjab Technical University",
+    //   description:
+    //     "Successfully graduated with a specialization in software engineering, equipped with strong fundamentals in Object-Oriented Programming, Data Structures, Algorithms, and Operating Systems.",
+    //   icon: <GraduationCap />,
+    // },
     {
       date: "July - Nov 2024",
       title: "Full Stack Intern",
@@ -197,7 +192,7 @@ const About = () => {
   ];
 
   const backgroundIcons = [
-    { icon: Brain as React.ElementType<IconBaseProps>, size: 28 }, // Cast icon type
+    { icon: Brain as React.ElementType<IconBaseProps>, size: 28 },
     { icon: Code2 as React.ElementType<IconBaseProps>, size: 32 },
     { icon: GraduationCap as React.ElementType<IconBaseProps>, size: 26 },
     { icon: Layers as React.ElementType<IconBaseProps>, size: 30 },
@@ -401,11 +396,8 @@ const About = () => {
                       }}
                     >
                       {React.cloneElement(item.icon, {
-                        // React.cloneElement correctly types the props if item.icon is ReactElement<IconBaseProps>
                         className:
                           "text-sky-500/80 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12",
-                        // Lucide icons also take size prop if you want to pass it explicitly,
-                        // but w-X/h-X classes usually work by setting container size for SVG
                       })}
                     </motion.div>
                   )}

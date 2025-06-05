@@ -1,25 +1,20 @@
 "use client";
 
 import React from "react";
-import { motion, Variants, Transition } from "framer-motion"; // Added Variants, Transition for better typing
-import ProjectCard from "./ProjectCard"; // Assuming ProjectCard.tsx handles rendering of project.liveLink and project.sourceLink
-import { Code2, Layers, Palette, LucideProps } from "lucide-react"; // LucideProps for icon typing
+import { motion, Variants, Transition } from "framer-motion";
+import ProjectCard from "./ProjectCard";
+import { Code2, Layers, Palette, LucideProps } from "lucide-react";
 
-// Re-define Project type or import if ProjectCard exports it globally
 interface Project {
   id: number;
   title: string;
   image: string;
   description: string;
   tags: string[];
-  liveLink?: string; // Optional: Link to the live deployment
-  sourceLink?: string; // Optional: Link to the source code repository
+  liveLink?: string;
+  sourceLink?: string;
 }
 
-// Ensure these image paths exist in your public folder
-// e.g., /public/images/fahub.png
-// liveLink and sourceLink have been added/ensured for all projects.
-// The ProjectCard component will need to display these links.
 const projectsData: Project[] = [
   {
     id: 1,
@@ -28,8 +23,8 @@ const projectsData: Project[] = [
     description:
       "An immersive e-commerce shopping website offering a wide range of fashion products. Built with a focus on user experience and modern design trends.",
     tags: ["React JS", "Context API", "Firebase Auth", "Responsive Design"],
-    liveLink: "https://react-shop-plum-seven.vercel.app/", // Placeholder actual URL
-    sourceLink: "https://github.com/mehak-2/react_shop", // Placeholder actual URL
+    liveLink: "https://react-shop-plum-seven.vercel.app/",
+    sourceLink: "https://github.com/mehak-2/react_shop",
   },
   {
     id: 2,
@@ -58,7 +53,7 @@ const projectsData: Project[] = [
     description:
       "A comprehensive system for managing school operations, built with Java, MySQL, and J2EE technologies. Streamlines administrative tasks.",
     tags: ["Java", "MySQL", "J2EE", "Backend", "Spring"],
-    liveLink: "#", // Previously commented, now added as a placeholder
+    liveLink: "#",
     sourceLink: "https://github.com/mehak-2/school-management-web-app",
   },
   {
@@ -134,10 +129,10 @@ const projectsData: Project[] = [
 ];
 
 interface FloatingShapeProps {
-  icon: React.ComponentType<LucideProps>; // Use ComponentType for Lucide icons
+  icon: React.ComponentType<LucideProps>;
   className?: string;
   animationProps?: {
-    animate?: Record<string, unknown>; // Use unknown instead of any
+    animate?: Record<string, unknown>;
     transition?: Transition;
   };
 }
@@ -251,12 +246,6 @@ const Projects: React.FC = () => {
           variants={containerVariants}
         >
           {projectsData.map((project) => (
-            // ProjectCard is responsible for displaying individual project details,
-            // including project.liveLink and project.sourceLink.
-            // Ensure ProjectCard.tsx has logic to render these links if they exist.
-            // For example:
-            // if (project.liveLink) { <a href={project.liveLink}>Live Demo</a> }
-            // if (project.sourceLink) { <a href={project.sourceLink}>Source Code</a> }
             <ProjectCard key={project.id} project={project} />
           ))}
         </motion.div>
