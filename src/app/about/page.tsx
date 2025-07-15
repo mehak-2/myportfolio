@@ -135,7 +135,7 @@ const About = () => {
   const timelineData: TimelineItemData[] = [
     {
       date: "Dec 2024 - Present",
-      title: "Software Developer Engineer Intern",
+      title: "Software Developer Engineer",
       company: "MaxTron AI",
       description:
         "Currently focused on enhancing backend SEO performance using Next.js and ensuring smooth API integration through collaboration with frontend teams.",
@@ -151,7 +151,7 @@ const About = () => {
     // },
     {
       date: "July - Nov 2024",
-      title: "Full Stack Intern",
+      title: "Full Stack Developer Intern",
       company: "Jagruti Rehabilitation Center",
       description:
         "Built full-stack applications utilizing Next.js. Optimized website SEO, achieving a 20% increase in user engagement.",
@@ -167,7 +167,7 @@ const About = () => {
     },
     {
       date: "July - Aug 2024",
-      title: "Full Stack Intern",
+      title: "Full Stack Developer Intern",
       company: "The Wow Diamond",
       description:
         "Developed full-stack applications with ReactJS for the frontend and Firebase for the backend, including RESTful APIs for real-time data.",
@@ -175,7 +175,7 @@ const About = () => {
     },
     {
       date: "April - July 2024",
-      title: "Full Stack Developer",
+      title: "Full Stack Developer Intern",
       company: "The Good Game Theory",
       description:
         "Enhanced frontend applications with ReactJS, boosting user engagement by 30%. Developed robust backend APIs using NodeJS and JSON storage.",
