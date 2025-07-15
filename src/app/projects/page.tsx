@@ -18,6 +18,22 @@ interface Project {
 const projectsData: Project[] = [
   {
     id: 1,
+    title: "Volunteer-Hub",
+    image: "/13pro.jpeg",
+    description:
+      "A full-stack volunteer management platform with Node.js, Express, and Next.js. Features role-based access, streamlined onboarding, document uploads, and responsive dashboards. Built with TypeScript, Redux Toolkit, and Tailwind CSS for scalable, modern UI/UX.",
+    tags: [
+      "Node.js",
+      "Express",
+      "Next.js",
+      "TypeScript",
+      "Redux Toolkit",
+      "Tailwind CSS",
+    ],
+    liveLink: "https://volunteer-fe.vercel.app/auth",
+  },
+  {
+    id: 2,
     title: "FaHub",
     image: "/1pro.jpeg",
     description:
@@ -27,7 +43,7 @@ const projectsData: Project[] = [
     sourceLink: "https://github.com/mehak-2/react_shop",
   },
   {
-    id: 2,
+    id: 3,
     title: "Chat App",
     image: "/2pro.jpeg",
     description:
@@ -37,7 +53,7 @@ const projectsData: Project[] = [
     sourceLink: "https://github.com/mehak-2/react-chatapp",
   },
   {
-    id: 3,
+    id: 4,
     title: "Grocery Store",
     image: "/3pro.jpeg",
     description:
@@ -47,7 +63,7 @@ const projectsData: Project[] = [
     sourceLink: "https://github.com/mehak-2/ecommerceweb",
   },
   {
-    id: 4,
+    id: 5,
     title: "School Management System",
     image: "/4pro.jpeg",
     description:
@@ -57,7 +73,7 @@ const projectsData: Project[] = [
     sourceLink: "https://github.com/mehak-2/school-management-web-app",
   },
   {
-    id: 5,
+    id: 6,
     title: "Keyframes App",
     image: "/5pro.jpeg",
     description:
@@ -67,7 +83,7 @@ const projectsData: Project[] = [
     sourceLink: "https://github.com/mehak-2/keyframes_app",
   },
   {
-    id: 6,
+    id: 7,
     title: "CarWash App",
     image: "/6pro.jpeg",
     description:
@@ -77,7 +93,7 @@ const projectsData: Project[] = [
     sourceLink: "https://github.com/mehak-2/carwash",
   },
   {
-    id: 7,
+    id: 8,
     title: "Quiz App",
     image: "/7pro.jpeg",
     description:
@@ -87,7 +103,7 @@ const projectsData: Project[] = [
     sourceLink: "https://github.com/mehak-2/quizassign",
   },
   {
-    id: 8,
+    id: 9,
     title: "Pokemon App",
     image: "/8pro.jpeg",
     description:
@@ -97,7 +113,7 @@ const projectsData: Project[] = [
     sourceLink: "#",
   },
   {
-    id: 9,
+    id: 10,
     title: "Canva Clone",
     image: "/9pro.jpeg",
     description:
@@ -107,7 +123,7 @@ const projectsData: Project[] = [
     sourceLink: "https://github.com/mehak-2/canva-task-1",
   },
   {
-    id: 10,
+    id: 11,
     title: "Weather App",
     image: "/10pro.jpeg",
     description:
@@ -117,7 +133,7 @@ const projectsData: Project[] = [
     sourceLink: "https://github.com/mehak-2/react-weatherapp",
   },
   {
-    id: 11,
+    id: 12,
     title: "Shopping Web",
     image: "/11pro.jpeg",
     description:
