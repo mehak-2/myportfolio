@@ -82,16 +82,16 @@ const projectsData: Project[] = [
     liveLink: "https://keyframes-app.vercel.app/",
     sourceLink: "https://github.com/mehak-2/keyframes_app",
   },
-  {
-    id: 7,
-    title: "CarWash App",
-    image: "/6pro.jpeg",
-    description:
-      "A sleek application for booking car wash services, built using React Js, Tailwind CSS, and TypeScript for a modern, responsive experience.",
-    tags: ["React Js", "Tailwind CSS", "TypeScript", "UI/UX"],
-    liveLink: "https://carwash-pi.vercel.app/",
-    sourceLink: "https://github.com/mehak-2/carwash",
-  },
+  // {
+  //   id: 7,
+  //   title: "CarWash App",
+  //   image: "/6pro.jpeg",
+  //   description:
+  //     "A sleek application for booking car wash services, built using React Js, Tailwind CSS, and TypeScript for a modern, responsive experience.",
+  //   tags: ["React Js", "Tailwind CSS", "TypeScript", "UI/UX"],
+  //   liveLink: "https://carwash-pi.vercel.app/",
+  //   sourceLink: "https://github.com/mehak-2/carwash",
+  // },
   {
     id: 8,
     title: "Quiz App",
@@ -139,8 +139,18 @@ const projectsData: Project[] = [
     description:
       "Another stylish e-commerce platform featuring a curated collection of clothing. Developed with React JS, JavaScript, CSS, and Firebase.",
     tags: ["React JS", "Firebase", "E-commerce", "Frontend"],
-    liveLink: "#",
+    liveLink: "https://fabricfashionapp-hcyc.vercel.app/",
     sourceLink: "https://github.com/mehak-2/fabricfashion",
+  },
+  {
+    id: 13,
+    title: "Packpal",
+    image: "/14pro.jpeg",
+    description:
+      "Packpal is a smart platform that helps plan your trips by suggesting destinations, activities, and personalized itineraries. It creates packing lists tailored to the weather, duration, and your travel plans. Collaborate with friends and family to effortlessly plan and share your travel experiences.",
+    tags: ["Next JS", "Node JS", "Sendgrid", "Tailwind CSS", "API", "Express"],
+    liveLink: "https://packpal-app-fe.vercel.app/",
+    sourceLink: "https://github.com/mehak-2/packpal-app-fe",
   },
 ];
 
